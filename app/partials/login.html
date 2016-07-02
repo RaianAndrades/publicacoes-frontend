@@ -1,0 +1,68 @@
+<!-- <div class="container" style="padding-top:10px;">
+    <h2> Faça o login </h2> <br/>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-xs-2">Nome: </label>
+            <div class="col-xs-6">
+                <input class="form-control" type="text" ng-model="user.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-2">Senha:</label>
+            <div class="col-xs-6">
+                <input class="form-control col-xs-6" type="password" ng-model="user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-10">
+                <input class="btn btn-default" type="submit" ng-click="logar()">
+            </div>
+        </div>
+    </form>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <form class="form-signin mg-btm">
+        <h3 class="heading-desc">
+        Login</h3>
+
+        <div class="main">  
+            <label>E-mail</label>    
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" ng-model="user.email" placeholder="" autofocus>
+            </div>
+            <label>Senha   
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" ng-model="user.password" placeholder="Password">
+            </div>
+            <!--<a href="">(Esqueci minha senha)</a></label>-->
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                     
+                </div>
+                <div class="col-xs-6 col-md-6 pull-right">
+                     <input class="btn btn-default" type="submit" ng-click="logar(user)">
+                </div>
+            </div>
+        </div>
+        
+        <span class="clearfix"></span>  
+
+        <div class="login-footer">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <div class="left-section">
+                        <a href="">Criar uma conta</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6 pull-right">
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+    <toast></toast>
+</div>

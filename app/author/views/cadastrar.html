@@ -1,0 +1,37 @@
+
+  <div class="container">
+	 <div class="col-md-3"></div>
+	   <div class="col-md-6">
+		<form ng-submit="cadastrarNovoAutor()">
+
+		
+			
+			<label>Nome:</label>
+			<input type="text" ng-model="author.authorname" class="form-control" required>
+			<label>E-mail:</label>
+			<input type="text" ng-model="author.authoremail" class="form-control" required>
+			<label>Profissão:</label>
+			<input type="text" ng-model="author.authorprofession" class="form-control" required>
+
+
+
+
+
+			<button class="btn btn-primary" type="submit">Cadastrar</button>
+		</form>
+		</div>
+		<div class="col-md-3"></div>
+	</div>	
+
+
+	<!-- <div class="container">
+		<div class="panel-body">
+			<div class="list-group-item" ng-repeat="publication in publicationList track by $index">
+			{{publication.title}}	- {{publication.year}} - {{publication.tipo}}
+				<span>
+					<a href="#/edit/{{publication.id}}">alterar</a>
+					<a href="" ng-click="excluirPublicacao(publication.id)">X</a>
+				</span>
+			</div>
+		</div>
+	</div> -->

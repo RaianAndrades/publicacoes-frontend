@@ -1,0 +1,38 @@
+
+
+      <div class="col-md-12">
+      <div class="row">
+        <h2> Publicações</h2>
+        <div class="col-md-2"> </div>
+        <div class="col-md-10">
+          <div ng-repeat="list in ListPubYear">
+            <h3 class="title"><a href="" ng-click="visualizarPublicacao(list.id)">{{list.title}}</a></h3>
+            <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> {{list.year}}</p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Tipo:</strong> {{list.type}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Completude: </strong>{{list.completeness}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Nacionalidade: </strong>{{list.nationality}}</p>
+              </div>
+              <div class="col-md-3">
+                <!--<td><a href="#/publicacoes/edit/{{list.id}}">alterar</a></td>
+                <td><a href="" ng-click="excluirPublicacao(list.id)">X</a></td> -->
+              </div>
+            </div>
+            <!-- <div ng-repeat="list in authorListPub">
+            
+              - <a href="" ng-click="visualizarAutor(list.id)">{{list.name}}</a>
+                 
+            </div>-->
+          <hr> 
+        </div>
+        </div>
+        <toast></toast>
+      </div>
+      <!--<h3 class="title">Autores</h3> -->
+     </div>
+

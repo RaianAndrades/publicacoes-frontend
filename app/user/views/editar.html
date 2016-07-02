@@ -1,0 +1,30 @@
+<div>
+	<div class="container">
+		<form ng-submit="editUsuario()">
+			<label>Nome:</label>
+			<input type="text" ng-model="user.name" class="form-control" required>
+			<label>Sobrenome:</label>
+			<input type="text" ng-model="user.lastname" class="form-control" required>
+			<label>CPF:</label>
+			<input type="text" ng-model="user.cpf" class="form-control" required data-ui-cpf="">
+			<label>Telefone:</label>
+			<input type="text" ng-model="user.phone" class="form-control" required data-ui-tel="">
+			<label>E-mail:</label>
+			<input type="text" ng-model="user.email" class="form-control" required>
+			<label>Senha:</label>
+			<input type="password" ng-model="user.password" class="form-control" required>
+			<button class="btn btn-primary" type="submit">Alterar</button>
+		</form>
+	</div>	
+	<!-- <div class="container">
+		<div class="panel-body">
+			<div class="list-group-item" ng-repeat="user in userList track by $index">
+			{{user.id}}	- {{user.name}} - {{user.lastname}}
+				<span>
+					<a href="#/edit/{{user.id}}">alterar</a>
+					<a href="" ng-click="excluirUsuario(user.id)">X</a>
+				</span>
+			</div>
+		</div>
+	</div> -->
+</div>

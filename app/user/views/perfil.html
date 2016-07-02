@@ -1,0 +1,73 @@
+<div class="container">
+<table  class="table table-striped">
+  <thead>
+    <tr>
+     
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>CPF</th>
+      <th>Telefone</th>
+      <th>E-mail</th>
+      <th>Alterar</th>
+      <!-- <th>Excluir</th> -->
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="message == null">
+    
+      <td ng-bind="user.name"></td>
+      <td ng-bind="user.lastname"></td>
+      <td ng-bind="user.cpf"></td>
+      <td ng-bind="user.phone"></td>
+      <td ng-bind="user.email"></td>
+      <td><a href="#/usuarios/editar/{{user.id}}">Alterar</a></td>
+      <!--<td><a href="" ng-click="excluirUsuario(user.id)">X</a></td> -->
+    </tr>
+  </tbody>
+</table>
+  <div class="col-md-12" ng-if="message != null">
+    <p>{{message}}</p>
+  </div>
+</div>
+
+
+
+<div class="row">
+        <!-- <div class="col-sm-4"><a href="#" class=""><img src="http://placehold.it/1280X720" class="img-responsive"></a> -->
+        <!-- </div> -->
+        <h2> Suas publicações</h2>
+        <div class="col-md-2"> </div>
+        <div class="col-md-8">
+          <div ng-repeat="list in listPubUsuario">
+            <h3 class="title"><a href="" ng-click="visualizarPublicacao(list.id)">{{list.title}}</a></h3>
+            <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> {{list.year}}</p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Tipo:</strong> {{list.type}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Completude: </strong>{{list.completeness}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Nacionalidade: </strong>{{list.nationality}}</p>
+              </div>
+
+              <div class="col-md-3">
+                <td><a href="#/publicacoes/edit/{{list.id}}">Alterar</a></td>
+                <td><a href="" ng-click="excluirPublicacao(list.id)">Excluir</a></td>
+              </div>
+
+              
+
+            </div>
+
+      <!--<td><a href="" ng-click="excluirUsuario(user.id)">X</a></td> -->
+           <!--  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p> -->
+            
+            <!--<p class="text-muted">Autores: <a href="#"> Pedro</a>,<a href="#"> João</a>,<a href="#"> Roberto</a></p>-->
+          <hr> 
+        </div>
+        </div>
+        <div class="col-md-2"> </div>
+      </div>

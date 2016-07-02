@@ -1,0 +1,250 @@
+
+  <div class="container">
+	 <!-- <div class="col-md-3"></div> -->
+	 <form ng-submit="cadastrarNovaPublicacao()">
+	   <div class="col-md-6">
+		
+			
+			<h2>Cadastro de publicação</h2>
+			<!-- <input type="text" ng-model="publication.iduser" class="form-control" required> -->
+			<!--<label>Id usuario:</label>
+			<input type="text" ng-model="publication.iduser" ng-value="{{$root.usuarioLogado.id}}" class="form-control" required> -->
+			<!--<input type="text"  ng-model="publication.iduser" class="form-control" required> -->
+			<label>Titulo:</label>
+			<input type="text" ng-model="publication.title" class="form-control" required>
+			<label>Ano:</label>
+			<input type="text" ng-model="publication.year" class="form-control" required>
+
+			<!-- <label>Tipo:</label>
+			<input type="text" ng-model="publication.type" class="form-control" required> -->
+
+			<label>Tipo</label>
+			<select class="form-control" data-ng-model="publication.type">
+                    <option value="">Selecionar</option>
+                    <option value="Periódico">Periódico</option>
+                    <option value="Conferência">Conferência</option>
+                    <option value="Livro">Livro</option>
+            </select>
+            
+			<br>
+
+			<label>Nacionalidade:</label>
+			<input type="text" ng-model="publication.nationality" class="form-control" required>
+			<label>Completude:</label>
+			<input type="text" ng-model="publication.completeness" class="form-control" required>
+
+
+			<br>
+			<div data-ng-if="publication.type=='Periódico'">
+				<label>Página inicial:</label>
+				<input type="text" ng-model="publication.startpage" class="form-control" required>
+				<label>Página final:</label>
+				<input type="text" ng-model="publication.endpage" class="form-control" required>
+				
+				<label>Volume:</label>
+				<input type="text" ng-model="publication.volume" class="form-control" required>
+				<label>Número:</label>
+				<input type="text" ng-model="publication.number" class="form-control" required>
+				<label>Nome:</label>
+				<input type="text" ng-model="publication.name" class="form-control" required>
+
+				<!-- <label>idpublicação:</label>
+				<input type="text" ng-model="publication.idPublicacao" class="form-control" required>
+				<label>idpublicaçãoPeriodico:</label>
+				<input type="text" ng-model="publication.idPublicacaoPeriodico" class="form-control" required>
+				<label>idPeriodico:</label>
+				<input type="text" ng-model="publication.idPeriodico" class="form-control" required> -->
+
+				<br>
+
+
+				<label>Nome do periódico:</label>
+				<input type="text" ng-model="publication.periodicname" class="form-control" required>
+				<label>Sigla do periódico:</label>
+				<input type="text" ng-model="publication.periodicinitials" class="form-control" required>
+				<label>Qualis:</label>
+				<input type="text" ng-model="publication.qualis" class="form-control" required>
+
+				<br>
+
+				<label>Nome editora:</label>
+				<input type="text" ng-model="publication.publishingcompanyname" class="form-control" required>
+				<label>Endereço Editora:</label>
+				<input type="text" ng-model="publication.publishingcompanyaddress" class="form-control" required>
+			</div>
+
+
+			<div data-ng-if="publication.type=='Conferência'">
+				<label>Nome do evento:</label>
+				<input type="text" ng-model="publication.eventname" class="form-control" required>
+				<label>Sigla do evento:</label>
+				<input type="text" ng-model="publication.eventinitials" class="form-control" required>
+				<label>Cidade do evento:</label>
+				<input type="text" ng-model="publication.eventcity" class="form-control" required>
+				<label>Página inicial:</label>
+				<input type="text" ng-model="publication.startpage" class="form-control" required>
+				<label>Página final:</label>
+				<input type="text" ng-model="publication.endpage" class="form-control" required>
+				<label>Editora:</label>
+				<input type="text" ng-model="publication.publishingcompany" class="form-control" required>
+
+				<!-- <label>idpublicação:</label>
+				<input type="text" ng-model="publication.idPublicacao" class="form-control" required> -->
+
+				<br>
+				<label>Nome da conferencia:</label>
+				<input type="text" ng-model="publication.conferencename" class="form-control" required>
+				<label>Sigla da conferencia:</label>
+				<input type="text" ng-model="publication.conferenceinitials" class="form-control" required>
+				<label>Qualis:</label>
+				<input type="text" ng-model="publication.qualis" class="form-control" required>
+
+
+			</div>
+
+			<div data-ng-if="publication.type=='Livro'">
+				<label>Editora:</label>
+				<input type="text" ng-model="publication.publishingcompany" class="form-control" required>
+				<label>Cidade de edição:</label>
+				<input type="text" ng-model="publication.editcity" class="form-control" required>
+				<label>Total de páginas:</label>
+				<input type="text" ng-model="publication.totalpage" class="form-control" required>
+			</div>
+
+
+			
+			<toast></toast>
+	</div>
+
+
+
+	
+		
+
+		<div class="col-md-6">
+
+			<div>
+				
+		        <h4>Digite o nome ou endereço do local:</h4>
+			    <input type="text" class="form-control" gm-places-autocomplete ng-model="autocomplete"/>
+
+			     
+			     <input type="hidden" ng-model="publication.lat" />
+	       		 <input type="hidden" ng-model="publication.lng" />
+	       		 <input type="hidden" ng-model="publication.endereco"/>
+				<!--<button ng-click="MostrarEndereco(lat,lng)">Mostrar no mapa</button>-->
+
+			</div>
+
+	       <!-- <div>
+			  <map id="map_canvas" style="height: 100px; width:100%; margin-bottom: 20px;"></map>	
+			</div> -->
+	 
+			<div>
+				 <h4>Autores</h4>
+						      	<!--<div class="row"> -->
+							      	 <div>
+									  <input type="text" ng-keyup="pesquisar(search)" ng-model="search" class="form-control" placeholder="Digite o nome do autor" autofocus autocomplete="off">
+
+									  <div class="autocomplete" ng-show="completing"  ng-repeat="authors in autores">
+									      <a class="link" href="" >
+									      	<div class="form-group autocomplete-style">
+									        	<p>{{authors.name}} - {{authors.profession}}
+									        	<input id="id"  type="hidden" ng-model="authors.id" data-ng-required="true">
+									        	<input id="name" type="hidden" ng-model="authors.name" data-ng-required="true">
+									        	<!-- <input id="profession" name="profession" type="hidden" data-ng-model="phone.number"placeholder="Digite aqui" data-ng-required="true" data-ui-tel="" > -->
+									        	<button ng-click="adcaut(authors)">Adicionar</button> </p>
+									        	<hr>
+									        </div>
+									     </a>
+									  </div>
+									</div>
+					        <!--  	</div> -->
+
+
+					 <table class="table table-striped" ng-show="publication.authors.length">
+		         		<thead>
+		         			<tr>
+		         				<!-- <th data-field="id">id</th> -->
+		         				<th data-field="name">Nome</th>
+		         				<th data-field="del">Excluir</th>
+		         			</tr>
+		         		</thead>
+		        	
+		         		<tbody>
+		         			<tr ng-repeat="item in publication.authors">
+		        				<!-- <td>{{item.id}}</td> -->
+		        				<td>{{item.name}}</td>
+		        				<!-- <td><a href="adcaut(autor)">X</a></td> -->
+		       				<td><a href="" ng-click="delaut($index)">X</a></td>
+		       			</tr>
+		        		</tbody>
+		        		<!-- <pre>list={{authors}}</pre> -->
+		        		<!-- <ul>
+					        <li ng-repeat="a in authors"> {{ a.id }} </li>
+					    </ul> -->
+		        	</table>
+		         	<p class="center" data-ng-hide="publication.authors.length">Nenhum autor adicionado.</p>
+				</div>		
+
+
+
+
+				<div ng-controller="ModalDemoCtrl">
+			  <script type="text/ng-template" id="myModalContent.html">
+               		         <div class="modal-header">
+               		             <h3 class="modal-title">Cadastre o novo autor!</h3>
+               		         </div>
+               		         <div class="modal-body">
+               		             <form ng-submit="cadastrarNovoAutor()">
+
+		
+			
+									<label>Nome:</label>
+									<input type="text" ng-model="author.authorname" class="form-control" required>
+									<label>E-mail:</label>
+									<input type="text" ng-model="author.authoremail" class="form-control" required>
+									<label>Profissão:</label>
+									<input type="text" ng-model="author.authorprofession" class="form-control" required>
+
+
+
+
+
+									<button class="btn btn-primary" type="submit">Cadastrar</button>
+								</form>
+               		         </div>
+               		         <div class="modal-footer">
+               		            
+               		             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+               		         </div>
+               		     </script>
+               		     <div class="jumbotron">
+               		 		<p class="breadcrumb">Não encontrou o autor da publicação?</p>
+               		        <button type="button" class="btn btn-default" ng-click="open()">Cadastrar novo autor</button>
+               		     </div>   
+               		     <div class="jumbotron">
+               		 		<p class="breadcrumb">Deseja adicionar um arquivo de referência?</p>
+               		        <input type="file" class="btn btn-default"/>
+               		     </div> 
+               		 </div>  	 
+
+ 			<button class="btn btn-primary" type="submit">Cadastrar publicação</button>
+
+			<!-- </div> -->
+			</form>
+		</div>
+	</div>	
+
+
+	<!-- <div class="container">
+		<div class="panel-body">
+			<div class="list-group-item" ng-repeat="publication in publicationList track by $index">
+			{{publication.title}}	- {{publication.year}} - {{publication.tipo}}
+				<span>
+					<a href="#/edit/{{publication.id}}">alterar</a>
+					<a href="" ng-click="excluirPublicacao(publication.id)">X</a>
+				</span>
+			</div>
+		</div>
+	</div> -->

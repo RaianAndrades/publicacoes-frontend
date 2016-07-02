@@ -1,0 +1,54 @@
+<div class="container">
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th>Id</th> -->
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Profissão</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="message == null">
+      <!-- <td ng-bind="author.id"></td> -->
+      <td ng-bind="author.name"></td>
+      <td ng-bind="author.email"></td>
+      <td ng-bind="author.profession"></td>
+    </tr>
+  </tbody>
+</table>
+  <div class="col-md-12" ng-if="message != null">
+    <p>{{message}}</p>
+  </div>
+</div>
+
+<div class="row">
+        <h2> Publicações de sua autoria:</h2>
+        <div class="col-md-2"> </div>
+        <div class="col-md-8">
+          <div ng-repeat="list in authorPubList">
+            <h3 class="title"><a href="" ng-click="visualizarPublicacao(list.id)">{{list.title}}</a></h3>
+            <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> {{list.year}}</p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Tipo:</strong> {{list.type}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Completude: </strong>{{list.completeness}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Nacionalidade: </strong>{{list.nationality}}</p>
+              </div>
+              <!--<div class="col-md-3">
+                <td><a href="#/publicacoes/edit/{{list.id}}">alterar</a></td>
+                <td><a href="" ng-click="excluirPublicacao(list.id)">X</a></td>
+              </div> -->
+            </div>
+          <hr> 
+        </div>
+        </div>
+        <div class="col-md-2"> </div>
+        <toast></toast>
+      </div>
+
+

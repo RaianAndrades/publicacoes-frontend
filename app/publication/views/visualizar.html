@@ -1,0 +1,111 @@
+<div class="container">
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Ano</th>
+      <th>Tipo</th>
+      <th>Nacionalidade</th>
+      <th>Completude</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="message == null">
+      <td ng-bind="publication.title"></td>
+      <td ng-bind="publication.year"></td>
+      <td ng-bind="publication.type"></td>
+      <td ng-bind="publication.nationality"></td>
+      <td ng-bind="publication.completeness"></td>
+    </tr>
+  </tbody>
+</table>
+  <div class="col-md-12" ng-if="message != null">
+    <p>{{message}}</p>
+  </div>
+
+
+
+    <!--  PERIÓDICO -->
+    <div data-ng-if="publication.type=='Periódico'">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <!-- <div class="panel-heading">Periódico</div> -->
+       <!--  <div class="panel-body">
+        </div> -->
+
+        <!-- List group -->
+        <ul class="list-group">
+          Página inicial: <li class="list-group-item" ng-bind="publication.startpage"></li>
+          Página final: <li class="list-group-item" ng-bind="publication.endpage"></li>
+          Volume: <li class="list-group-item" ng-bind="publication.volume"></li>
+          Número: <li class="list-group-item" ng-bind="publication.number"></li>
+          Nome: <li class="list-group-item" ng-bind="publication.name"></li>
+          Nome do periódico: <li class="list-group-item" ng-bind="publication.periodicname"></li>
+          Sigla do periódico: <li class="list-group-item" ng-bind="publication.initialperiodic"></li>
+          Qualis: <li class="list-group-item" ng-bind="publication.qualis"></li>
+          nome da editora: <li class="list-group-item" ng-bind="publication.publishingcompanyname"></li>
+          Endereço da editora: <li class="list-group-item" ng-bind="publication.publishingcompanyaddress"></li>
+        </ul>
+      </div>
+    </div>
+     <!-- FINAL PERIÓDICO -->
+
+     <!--  CONFERENCIA -->
+    <div data-ng-if="publication.type=='Conferência'">
+       <div class="panel panel-default">
+        <!-- Default panel contents 
+        <div class="panel-heading">Conferência</div>-->
+       <!--  <div class="panel-body">
+        </div> -->
+
+        <!-- List group -->
+        <ul class="list-group">
+          Nome do evento: <li class="list-group-item" ng-bind="publication.eventname"></li>
+          Sigla do evento: <li class="list-group-item" ng-bind="publication.initialsevent"></li>
+          Cidade do evento: <li class="list-group-item" ng-bind="publication.cityevent"></li>
+          Página inicial: <li class="list-group-item" ng-bind="publication.startpage"></li>
+          Página final: <li class="list-group-item" ng-bind="publication.endpage"></li>
+          Editora: <li class="list-group-item" ng-bind="publication.publishingcompany"></li>
+          Nome da conferência: <li class="list-group-item" ng-bind="publication.conferencename"></li>
+          Sigla da conferência: <li class="list-group-item" ng-bind="publication.initialsconference"></li>
+          Qualis: <li class="list-group-item" ng-bind="publication.qualis"></li>
+          
+
+        </ul>
+      </div>
+    </div>
+     <!--  FINAL CONFERENCIA -->
+
+    <!--  LIVRO -->
+     <div data-ng-if="publication.type=='Livro'">
+       <div class="panel panel-default">
+        <!-- Default panel contents 
+        <div class="panel-heading">Livro</div> -->
+       <!--  <div class="panel-body">
+        </div> -->
+
+        <!-- List group -->
+        <ul class="list-group">
+          Editora: <li class="list-group-item" ng-bind="publication.publishingcompany"></li>
+          Cidade da editora: <li class="list-group-item" ng-bind="publication.editcity"></li>
+          Total de páginas: <li class="list-group-item" ng-bind="publication.totalpage"></li>
+        </ul>
+      </div>
+    </div>  
+    <!--  FINAL LIVRO -->
+    <!--Endereço: <li class="list-group-item" ng-bind="publication.address"></li>-->
+
+
+    <h3 class="title">Autores</h3>
+    <div ng-repeat="list in authorListPub">
+            
+           - <a href="" ng-click="visualizarAutor(list.id)">{{list.name}}</a>
+           
+      </div>
+
+
+</div>
+
+
+

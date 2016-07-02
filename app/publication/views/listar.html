@@ -1,0 +1,115 @@
+
+<!-- <div class="container">
+
+</div> -->
+
+<!-- <div class="container">
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Ano</th>
+      <th>Tipo</th>
+      <th>Nacionalidade</th>
+      <th>Completude</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="publication in publicationList | filter: search track by $index">
+      <td><a href="" ng-click="visualizarPublicacao(publication.id)">{{publication.title}}</a></td>
+      <td>{{publication.year}}</td>
+      <td>{{publication.type}}</td>
+      <td>{{publication.nationality}}</td>
+      <td>{{publication.completeness}}</td>
+      <td><a href="#/publicacoes/edit/{{publication.id}}">alterar</a></td>
+      <td><a href="" ng-click="excluirPublicacao(publication.id)">X</a></td>
+    </tr>
+  </tbody>
+</table>
+</div> -->
+
+  
+     <!-- <a href="" ng-click="sort('list.id')">Name
+      <i ng-class="{'icon-chevron-up':isSortUp('list.id'),'icon-chevron-down':isSortDown('list.id')}"></i>
+      </a>
+      <a href="" ng-click="sort('lastname')">Lastname
+      <i ng-class="{'icon-chevron-up':isSortUp('lastname'),'icon-chevron-down':isSortDown('lastname')}"></i>
+      </a>
+      <a href="" ng-click="sort('age')">Age
+      <i ng-class="{'icon-chevron-up':isSortUp('age'),'icon-chevron-down':isSortDown('age')}"></i>
+      </a> -->
+ 
+<div class="col-md-1"></div>
+<div class="col-md-3">
+<div id="demo" class="collapse in">
+        <hr>
+        <div class="list-group list-group">
+          
+          
+           <h4 class="">Filtrar por Autor</h4>
+          <div ng-repeat="autor in authorList">
+            <a href="" ng-click="visualizarAutor(autor.id)" class="list-group-item">{{autor.authorname}}</a> 
+          </div>  
+          <button class="btn btn-primary" href="" ng-click="Autores()">Ver todos</button>
+         
+        
+          <hr>
+
+          <h4 class="">Filtrar por Ano</h4>
+          <div ng-repeat="pub in pubYearList">
+            <a href="" ng-click="visualizarPublicacaoYear(pub.year)" class="list-group-item">{{pub.year}}</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+      <div class="col-md-8">
+        
+
+    <h4>Ordenar lista por:</h4>
+    <button  ng-click="ordenar('title')">Titulo</button>
+    <button  ng-click="ordenar('year')">Ano</button>
+      <div class="row">
+        <h2> Publicações</h2>
+        <div class="col-md-2"> </div>
+        <div class="col-md-10">
+          <form class="form-inline">
+            <div class="form-group">
+              <label>Procurar publicação:</label>
+              <input type="text" ng-model="pesquisar" class="form-control" placeholder="Procurar...">
+            </div>
+          </form>
+          <div ng-repeat="list in publicationList | filter:pesquisar  |orderBy:sortKey:reverse ">
+            <h3 class="title"><a href="" ng-click="visualizarPublicacao(list.id)">{{list.title}}</a></h3>
+            <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> {{list.year}}</p>
+            <div class="row">
+              <div class="col-md-3">
+                <p><strong>Tipo:</strong> {{list.type}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Completude: </strong>{{list.completeness}}</p>
+              </div>
+              <div class="col-md-3">
+                <p><strong>Nacionalidade: </strong>{{list.nationality}}</p>
+              </div>
+              <div class="col-md-3">
+                <!--<td><a href="#/publicacoes/edit/{{list.id}}">alterar</a></td>
+                <td><a href="" ng-click="excluirPublicacao(list.id)">X</a></td> -->
+              </div>
+            </div>
+           <!--  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book...</p> -->
+             <div ng-repeat="list in authorListPub">
+            
+              - <a href="" ng-click="visualizarAutor(list.id)">{{list.name}}</a>
+                 
+            </div>
+          <hr> 
+        </div>
+        </div>
+        <toast></toast>
+      </div>
+      <!--<h3 class="title">Autores</h3> -->
+     </div>
+

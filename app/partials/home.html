@@ -1,0 +1,61 @@
+<div class="container"> 
+
+  
+    <br/>
+    <h3 ng-show="usuarioLogado.currentUser.name != null">Seja bem vindo {{usuarioLogado.currentUser.name}}</h3>
+
+     <div class="container">
+   <div class="conteudo"> 
+    <div class='content'>
+
+
+        <div class="col-md-3">
+    
+         </div> 
+
+
+         <div class="col-md-6">
+          <p class="initial">Cadastre suas publicações!</p>
+          <a href="#/cadastrar-usuario" class="ghost-button">Criar conta</a>
+         </div> 
+
+         <div class="col-md-3">
+     
+         </div> 
+
+       
+    </div>
+   </div>
+  </div>
+
+  <div class="container">
+     <div class="row">
+      
+        <h2> Recentes</h2>
+        <div class="col-md-2"> </div>
+        <div class="col-md-8">
+          <div ng-repeat="list in publicacoes">
+            <h3 class="title"><a href="" ng-click="visualizarPublicacao(list.id)">{{list.title}}</a></h3>
+            <p class="text-muted"><span class="glyphicon glyphicon-calendar"></span> {{list.year}}</p>
+            <div class="row">
+              <div class="col-md-4">
+                <p><strong>Tipo:</strong> {{list.type}}</p>
+              </div>
+              <div class="col-md-4">
+                <p><strong>Completude: </strong>{{list.completeness}}</p>
+              </div>
+              <div class="col-md-4">
+                <p><strong>Nacionalidade: </strong>{{list.nationality}}</p>
+              </div>
+            </div>
+          <hr> 
+        </div>
+        </div>
+        <div class="col-md-2"> </div>
+      </div>
+
+
+      <toast></toast>
+  </div>  
+
+<!-- </div>
